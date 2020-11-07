@@ -22,4 +22,3 @@ jobs:
         HUGO_VERSION: 0.68.3
         TARGET_REPO: mrmassis/mrmassis.github.io
         TOKEN: ${{ secrets.GP_TOKEN }}
-        CNAME: www.mrmassis.xyz
