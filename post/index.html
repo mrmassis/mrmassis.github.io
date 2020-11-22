@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Observabilidade"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Observabilidade &middot; Content im Portugues" />
+  	<meta property="og:site_name" content="Content im Portugues" />
+  	<meta property="og:url" content="https://mrmassis.github.io/post/" />
+
+    
+        
+            <meta property="og:image" content="/images/cover.png"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-11-07T20:05:10-03:00" />
+
+    
+    
+
+    <title>Observabilidade &middot; Content im Portugues</title>
+
+    
+    <meta name="description" content="Nesta postagem vou relatar alguns pontos referentes as minhas aventuras em observabilidade de ambientes e sistemas ;) assim como sintetizar muito das experienci" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://mrmassis.github.io/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://mrmassis.github.io/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://mrmassis.github.io/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://mrmassis.github.io/css/nav.css" />
+
+    
+    <link rel="stylesheet" href="https://mrmassis.github.io/style.css">
+    
+
+    
+
+    
+      
+          <link href="https://mrmassis.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Content im Portugues" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.68.3" />
+
+    <link rel="canonical" href="https://mrmassis.github.io/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://mrmassis.github.io/images/logo.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://mrmassis.github.io/images/logo.png",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Observabilidade",
+    "name": "Observabilidade",
+    "wordCount":  1874 ,
+    "timeRequired": "PT9M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://mrmassis.github.io/post/",
+    "datePublished": "2020-11-07T20:05Z",
+    "dateModified": "2020-11-07T20:05Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mrmassis.github.io/post/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="https://mrmassis.github.io/">Home</a>
+            </li>
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="https://mrmassis.github.io/post">Blog</a>
+            </li>
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="https://mrmassis.github.io/contact">Contact</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://mrmassis.github.io/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav overlay clearfix">
+
+
+      
+        <a class="blog-logo" href="https://mrmassis.github.io/"><img src="https://mrmassis.github.io/images/logo.png" alt="Home" /></a>
+      
+      
+          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+      
+    </nav>
+
+    
+
+
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post ">
+    <header class="post-header">
+      <nav class="breadcrumb">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </nav>
+
+
+        <h1 class="post-title">Observabilidade</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+
+
+<p>Nesta postagem vou relatar alguns pontos referentes as minhas aventuras em observabilidade de ambientes e sistemas ;) assim como sintetizar muito das experiencias e relatos de outros desenvolvedores e DevOps. O termo observabilidade (de <em>observability</em>) é muito abrangente e muitas vezes referenciado de maneiras distintas. Estas distinções podem levar a confusão por parte dos interessados neste tema tão abrangente. Eu costumo interpretar essas referências não como divergências, mas sim como pontos de vistas distintos acerca do mesmo tema. Contudo, para não ficar muito desconexo e ter um lastro em comum, costumo utilizar como ponto de partida a definição formal de observabilidade oriunda da <a href="">teoria de controle</a> onde:</p>
+<blockquote>
+<p>(&hellip;) é uma medida que descreve o quão bem podem ser inferidos os estados de um sistema a partir do conhecimento de suas saídas externas.</p>
+</blockquote>
+<p>Mas o que é possível entender desta definição? Na minha interpretação tal definição relata que a observabilidade é um conjunto de técnicas, ferramentas e abordagens que possibilitam inferir o estado de um sistema a partir de suas saídas externas. As saídas externas podem ser indicadores de funcionamento do sistema (consumo de memória, uso de CPUs, etc), eventos de utilização e comportamento (ex. registros de logs), correlação entre componentes do sistemas (trace por exemplo) e por ai vai. A organização e a categorização de cada uma dessas saídas externas podem ser agrupadas em determinados subconjunto. Sendo estes subconjuntos referenciados em várias documentações como pilares da observabilidades. Assim temos três os pilares:</p>
+<p><img src="https://mrmassis.github.io/images/pillars.png" alt="Pilares"></p>
+<p>Mesmo alguns autores divergindo na quantidade de pilares da observabilidade e outros autores como (<a href="https://dzone.com/users/2809513/bensigelman.html">Ben Sigelman</a>) que acreditam que não há pilares ou eles estão desmoronando, meu entendimento sobre observabilidade segue as opiniões de <a href="https://medium.com/@tyler_treat">Tyler Treat</a>, <a href="https://copyconstruct.medium.com/">Cindy Sridharan</a> e de vários outros autores que consideram os três pilares apresentados na figura acima e os interpretam como <em>facilitadores para tornar ambientes mais observáveis</em>.</p>
+<p>Descrevendo tais pilares temos:</p>
+<ul>
+<li>
+<p><em>Logs</em>: são registros de atividades que acontecem dentro do sistema de interesse. São os dados que utilizamos quando uma anomalia acontece no ambiente de interesse. Os registros de logs são dependentes dos sistemas de interesse, sendo papel dos responsáveis por eles na camada de OPS realizar a normalização e estrutura de tais registros.</p>
+</li>
+<li>
+<p><em>Métricas</em>: de acordo com Erin Baez uma métrica é um valor numérico mensurável em um período de tempo. As métricas são dados utilizado em ambientes de monitoramento para determinar a saúde de um sistema. Métricas podem ser atreladas a alarmes que soam quando determinadas circunstâncias ocorrem (uma métrica exceder um <em>threashold</em> por exemplo). Um consideração que deve ser realizada é que a efetividade de uma métrica é quase nula sem um contexto ou parâmetros de referencia. Como podemos saber se o consumo de memória de uma aplicação está alto senão sabemos quanto o sistema como todo tem disponível, assim como o comportamento médio da própria aplicação.</p>
+</li>
+<li>
+<p><em>Traces</em>: podem ser considerados trilhas de registros de acontecimentos durante a execução de sistemas. Consistem de uma série de metadados (nome, timestamp, ID, etc.), interconexões (dizendo os processos que invocaram a ação registrada), e as ações. Traces possibilitam seguir por trilhas que tem origem no problema de interesse, até todos os elementos que precederam tal acontecimento. É um insumo útil para determinar possíveis causas de lentidão de um ambiente, da quebra da execução de um sistema, etc.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>NOTA</strong>: alguns autores, assim como eu, determinam <em>eventos</em> como registros de logs acrescidos de metadados como, por exemplo, contexto e/ou rótulos.</p>
+</blockquote>
+<p>Juntos os três pilares podem oferecer todos os insumos para que os estados de um sistema, e quando falo em sistema estou considerando aplicações e serviços em geral, possam ser identificados e os possíveis comportamentos futuros possam ser inferidos. Quanto mais dados obtemos do sistema, mais informações temos sobre ele e consequentemente melhor precisão temos sobre a inferência do seu comportamento, com isso é possível mantermos a avaliabilidade e saúde do sistema.</p>
+<p>Observabilidade se tornou o assunto do momento, e muito se fala sobre ele em <em>blogs</em>, <em>fóruns</em> e <em>sites</em> pela Internet. No conjunto de postagens sobre observabilidade (parte <a href="https://blog.realkinetic.com/microservice-observability-part-1-disambiguating-observability-and-monitoring-656b4c483495">1</a> e <a href="https://blog.realkinetic.com/microservice-observability-part-2-evolutionary-patterns-for-solving-observability-problems-a053ae995a21">2</a>) <a href="https://medium.com/@tyler_treat">Tyler Treat</a> expõem seu ponto de vista sobre o tema considerando como pano de fundo as arquiteturas de microsserviços, como o caso do Kubernetes. Considerando a definição de observabilidade utilizada por ele: <em>habilidade de para perguntar questões sobre um sistema sem conhecer aquelas questões previamente</em>, Tyler descreve quatro problemas envolvendo este tema: <em>fadiga de agentes</em>, <em>capacidade</em>, <em>previsão</em>, e <em>ferramentas de acesso aos dados</em>.</p>
+<ol>
+<li>
+<p><em>Fadiga de agentes</em>: este problema é inerente a quantidade de ferramentas voltadas à observabilidade utilizadas nos ambientes alvos. A quantidade de agentes presentes para coleta de logs, métricas, relações de <em>trace</em>, etc. contribui negativamente para as atividades de OPS, assim como aumentam o consumo de recursos dentro ambiente (CPU, memória, disco, etc.). Tal quantidade é reflexo da carência de padrões entre os agentes, da falta de estudos em relação ao tipo de soluções serão implantadas e qual o sistema foco destes agentes.</p>
+</li>
+<li>
+<p><em>Capacidade</em>: um plano de capacidade também deve ser considerado quando se trabalha com observabilidade, principalmente quando o foco são ambientes de microsserviços escaláveis como, por exemplo, o Kubernetes. Nesse cenário um aumento no pico de acesso a determinados sistemas pode acarretar na escala horizontal dos respectivos componente. A escala de componentes, por sua vez, aumenta o volume dos dados de observabilidade. Outro problema relacionado a capacidade é em relação a quantidade de licenças de ferramentas proprietárias que podem ser violadas quando trabalhando em ambientes escaláveis.</p>
+</li>
+<li>
+<p><em>Necessidade de previsão</em>: de acordo com o ponto de vista do Tyler, a observabilidade deve ser capaz de responder perguntas que ainda não conhecemos. Para que isso seja possível, é necessário termos dados. Logo é necessário estimar, ou prever, a geração dos dados mesmo não precisando deles naquela momento. A geração pode ser feita reativamente, quando a pergunta já foi formulada mas ela ainda não pode ser respondida, ou proativamente, o que é mais difícil de acontecer. No primeiro cenário a demanda já ocorreu e haverá um <em>gap</em> até que seja possível satisfazê-la. Já no modo proativo, senão for usados alguns modelos estatísticos e matemáticos como aproximações, a geração de dados será um problema impossível de resolver.</p>
+</li>
+<li>
+<p><em>Ferramentas de acesso aos dados</em>: definir o conjunto de ferramentas capazes de acessar e tratar os dados recebidos de várias fontes em um ambiente heterogêneo é um problema correlacionados que também permeia a observabilidade. Como buscar o dados das diversas fontes e entregá-los a diversas ferramentas interessadas é um desafio em aberto que deve ser tratado neste contexto.</p>
+</li>
+<li>
+<p><em>Impactos da precisão</em>: somado aos quatro desafios propostos por Tyler, também exploro os impactos do nível de precisão, isto é o nível de detalhamento, que estamos interessados em obter sobre os estados de um sistema. Possíveis impactos no sistema e na infraestrutura podem ocorrer quando buscamos mais detalhamento, isto porque o nível de detalhamento esta intimamente ligado ao volume de dados de observabilidade. Este volume tem um custo, e deve ser levado em consideração. A busca por precisão também gera uma carga proporcional à infraestrutura utilizada: <em>mais dados trafegando</em> e <em>mais recursos sendo consumidos</em>. Isto pode gerar um problema extra pois provoca um <em>overhead</em> em todo o ambiente. Por fim, a retenção também é impactada pela precisão, mais dados significa mais armazenamento o que é multiplicado por <em>N</em> dias retenção.</p>
+</li>
+<li>
+<p><em>Intrusividade</em>: também acredito que as definições das fronteiras do <em>mensurável e obteníveis</em>, ou seja, as fronteiras que delimitam até a onde posso obter dados sem comprometer a privacidade do sistema, deve ser um ponto de atenção em um ambiente de observabilidade. Ultrapassar a fronteira delimitada (seja em contrato ou definida com bases éticas) pode levar a problemas que extrapolam o técnico e entram em outras esferas (jurídica por exemplo).</p>
+</li>
+</ol>
+<p><a href="https://medium.com/@dilhasha.nazeer">Fathima Dihasha</a> engenheira sênior de software da WSO2, em sua série de postagens (<a href="https://medium.com/the-devops-journey/observability-monitoring-part-01-92efec9f1c0d">1</a>, <a href="https://medium.com/the-devops-journey/observability-monitoring-part-02-d4d81b67c09a">2</a>, <a href="https://medium.com/the-devops-journey/observability-monitoring-part-03-35a4601c0380">3</a>, e <a href="https://medium.com/the-devops-journey/observability-monitoring-part-04-8742a06caff4">4</a>) sobre observabilidade, confronta o conceito de observabilidade com as atividades de monitoração chegando a definição que: <em>observabilidade é uma propriedade de um sistema e monitoramento é um atividade realizada sobre um sistema</em>. Tal autora foca suas atenções nas métricas e sugere um ciclo de vida de métricas dentro do contexto da observabilidade que também podem ser estendidos para outros pilares. Para ela, o monitoramento deve cobrir cinco estágios:</p>
+<ol>
+<li>Exposição das métricas de interesse.</li>
+<li>Coleta das métricas expostas.</li>
+<li>Armazenamento das métricas coletadas.</li>
+<li>Visualização das métricas armazenadas.</li>
+<li>Mecanismos de alerta de anomalias das métricas.</li>
+</ol>
+<p>Desconsiderando o primeiro estágio, que para logs é gerados pelo sistema de interesse, todas as quatro demais podem ser consideradas para dados de logs. Sintetizando todas as definições, pontos de vistas e considerações realizadas anteriormente, é possível a descrever uma definição um pouco mais completa sobre a observabilidade.</p>
+<blockquote>
+<p>A observabilidade é um ambiente composto por um conjunto de ferramentas, as quais são voltadas para um ou mais pilares fundamentais: logs, métricas e trace. Por meio da observabilidade é possível responder perguntas que já foram ou ainda não foram concebidas. Com isso é possível manter a saúde dos sistemas os quais a observabilidade foi aplicada.</p>
+</blockquote>
+<h3 id="pipeline-da-observabilidade">Pipeline da Observabilidade</h3>
+<p>Assumindo as lições aprendidas por meio dos problemas e das limitações apresentadas anteriormente, e baseado nas ideias e soluções apresentadas nos artigos citados ao longo do texto, descrevo a seguir um conjunto de etapas que vão da coleta a entrega de dados de observabilidade. Essa sequência de passo é consenso a todos os entusiastas do tema, e descreve um <em>pipeline</em> com 4 estágios: <em>1-coleta; 2-envio; 3-roteamento; 4-armazenamento e disponibilização</em>. Um resultado diretos do  <em>pipeline</em> e que cada estágio pode ser tratado como um problema específico e as melhores práticas daquele tipo de problemas pode ser aplicadas sem afetar os demais estágios.</p>
+<p>A próxima figura apresenta graficamente as quatro etapas envolvidas neste <em>pipeline</em>, destacando os estágios, os respectivos problemas e os pontos de atença de cada um deles.</p>
+<p><img src="https://mrmassis.github.io/images/pipeline.png" alt="Pipeline da Observabilidade"></p>
+<p>Estágios:</p>
+<ol>
+<li>
+<p><em>Coleta</em>: primeiro estágio! É onde é realizada a coleta dos dados de observabilidade (métricas, registros de logs, etc). As ferramentas que contemplam este estágio podem estar no domínio da origem dos dados, assim como podem estar em domínios diferentes.</p>
+</li>
+<li>
+<p><em>Envio</em>: o envio é o <em>endpoint</em> das ferramentas de coleta (estágio 1). Podem ser aplicadas filas ou mecanismos semelhantes para prover, entre outras coisas, prioridades e resiliência (<em>buffers</em> em disco de armazenamento, alta-disponibilidade por exemplo).</p>
+</li>
+<li>
+<p><em>Roteamento</em>: o roteamento consiste na retirada dos dados de observabilidade das estruturas providas pelo estágio 2, e encaminhá-las para os destinatários. Por exemplo, um registro de log pode ser enviado para uma ferramente de análise e para um repositório de longa duração para fins de auditoria.</p>
+</li>
+<li>
+<p><em>Armazenamento e Distribuição</em>: os destinatários do estágio 3 (roteamento) se encontram aqui. Podem ser repositório de longa duração, ferramentas de agregação, ferramentas de pesquisa e análise e assim por diante. O estágio 4 é o último estágio do pipeline e ponto final dos dados que foram emitidos pelo sistema antes do estágio 1 (coleta).</p>
+</li>
+</ol>
+<h3 id="a-seguir">A Seguir!</h3>
+<p>Nas próximas postagens vou explorar cada um dos três pilares considerados (logs, métricas e trace) destacando algumas das ferramentas <em>opensources</em> disponíveis e minhas experiencias em cada um destes subconjuntos.</p>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/">https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/</a></li>
+<li><a href="https://blog.realkinetic.com/microservice-observability-part-1-disambiguating-observability-and-monitoring-656b4c483495">https://blog.realkinetic.com/microservice-observability-part-1-disambiguating-observability-and-monitoring-656b4c483495</a></li>
+<li><a href="https://blog.realkinetic.com/microservice-observability-part-2-evolutionary-patterns-for-solving-observability-problems-a053ae995a21">https://blog.realkinetic.com/microservice-observability-part-2-evolutionary-patterns-for-solving-observability-problems-a053ae995a21</a></li>
+<li><a href="https://medium.com/the-devops-journey/observability-monitoring-part-01-92efec9f1c0d">https://medium.com/the-devops-journey/observability-monitoring-part-01-92efec9f1c0d</a></li>
+<li><a href="https://medium.com/the-devops-journey/observability-monitoring-part-02-d4d81b67c09a">https://medium.com/the-devops-journey/observability-monitoring-part-02-d4d81b67c09a</a></li>
+<li><a href="https://medium.com/the-devops-journey/observability-monitoring-part-03-35a4601c0380">https://medium.com/the-devops-journey/observability-monitoring-part-03-35a4601c0380</a></li>
+<li><a href="https://medium.com/the-devops-journey/observability-monitoring-part-04-8742a06caff4">https://medium.com/the-devops-journey/observability-monitoring-part-04-8742a06caff4</a></li>
+</ul>
+<blockquote>
+<p><strong>NOTA</strong>: é importante ressaltar que o conteúdo apresentado é baseado no meu ponto de vista, e não tem a pretensão de ser uma verdade que se sobressaia sobre outras &ldquo;verdades&rdquo;. São interpretações que consideraram minhas experiências de uso de vida ao longo dos anos em TIC.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="https://mrmassis.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">'s Picture</span></a>
+    </figure>
+    
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://mrmassis.github.io/" style="background-image: url(https://cdn4.iconfinder.com/data/icons/gray-user-management/512/rounded-512.png)"><span class="hidden">MRMassiS's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://mrmassis.github.io/">MRMassiS</a></h4>
+  
+  <p>PhD in Cloud Computing, DevOps at SERPRO, and Open Source Enthusiast.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Curitiba, Brasil</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this page</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Observabilidade&nbsp;-&nbsp;Content%20im%20Portugues&amp;url=https%3a%2f%2fmrmassis.github.io%2fpost%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmrmassis.github.io%2fpost%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmrmassis.github.io%2fpost%2f&amp;description=Observabilidade"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmrmassis.github.io%2fpost%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+<aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="https://mrmassis.github.io/contact/">
+          <section class="post">
+              <h2>Contact</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="https://mrmassis.github.io/about/">
+          <section class="post">
+              <h2>About</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Content im Portugues</a> © MRMAssis 2020</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://mrmassis.github.io/js/jquery.js"></script>
+    <script type="text/javascript" src="https://mrmassis.github.io/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://mrmassis.github.io/js/index.js"></script>
+    
+</body>
+</html>
+

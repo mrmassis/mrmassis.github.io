@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Content im Portugues</title>
+    <link>https://mrmassis.github.io/</link>
+    <description>Recent content on Content im Portugues</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© MRMAssis 2020</copyright>
+    <lastBuildDate>Sun, 22 Nov 2020 13:49:47 -0300</lastBuildDate>
+    
+	<atom:link href="https://mrmassis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contact</title>
+      <link>https://mrmassis.github.io/contact/</link>
+      <pubDate>Sun, 22 Nov 2020 13:49:47 -0300</pubDate>
+      
+      <guid>https://mrmassis.github.io/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observabilidade</title>
+      <link>https://mrmassis.github.io/post/</link>
+      <pubDate>Sat, 07 Nov 2020 20:05:10 -0300</pubDate>
+      
+      <guid>https://mrmassis.github.io/post/</guid>
+      <description>Nesta postagem vou relatar alguns pontos referentes as minhas aventuras em observabilidade de ambientes e sistemas ;) assim como sintetizar muito das experiencias e relatos de outros desenvolvedores e DevOps. O termo observabilidade (de observability) é muito abrangente e muitas vezes referenciado de maneiras distintas. Estas distinções podem levar a confusão por parte dos interessados neste tema tão abrangente. Eu costumo interpretar essas referências não como divergências, mas sim como pontos de vistas distintos acerca do mesmo tema.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://mrmassis.github.io/about/</link>
+      <pubDate>Thu, 05 Nov 2020 10:11:39 -0300</pubDate>
+      
+      <guid>https://mrmassis.github.io/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
